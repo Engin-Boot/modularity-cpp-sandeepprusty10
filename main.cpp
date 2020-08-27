@@ -31,7 +31,7 @@ std::string ToString()
     std::string manualStr = " ";
     for(i = 1; i <= majorcount*minorcount; i++)
     {
-        manualStr = manualStr + i + "---->" + TelCoColorCoder::MajorColorNames[(i-1)/ majorcount] + "   " + TelCoColorCoder::MinorColorNames[(i-1)% minorcount] + "\n" + " ";
+        manualStr = manualStr + std::to_string(i) + "---->" + TelCoColorCoder::MajorColorNames[(i-1)/ majorcount] + "   " + TelCoColorCoder::MinorColorNames[(i-1)% minorcount] + "\n" + " ";
     }
     return manualStr;
 }
