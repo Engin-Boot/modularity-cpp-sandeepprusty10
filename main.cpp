@@ -23,14 +23,17 @@ void testPairToNumber(
     assert(pairNumber == expectedPairNumber);
 }
 
-void ToString()
+std::string ToString()
 {
     int i;
-    std::cout << std::endl << "----------MANUAL----------" << std::endl;
-    for(i=1;i<=25;i++)
+    int majorcount = TelCoColorCoder::numberOfMajorColors;
+    int minorcount = TelCoColorCoder::numberOfMinorColors;
+    std::string manualStr = " ";
+    for(i = 1; i <= majorcount*minorcount; i++)
     {
-        std::cout << i << "---->" << TelCoColorCoder::MajorColorNames[(i-1)/(TelCoColorCoder::numberOfMajorColors)] << "  " << TelCoColorCoder::MinorColorNames[(i-1)%(TelCoColorCoder::numberOfMinorColors)] << std::endl;
+        manualStr = manualStr + i + "---->" + TelCoColorCoder::MajorColorNames[(i-1)/ majorcount] + "   " + TelCoColorCoder::MinorColorNames[(i-1)% minorcount] + "\n" + " ";
     }
+    return manualStr;
 }
 int main() {
     testNumberToPair(4, TelCoColorCoder::WHITE, TelCoColorCoder::BROWN);
